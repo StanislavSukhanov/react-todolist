@@ -55,8 +55,6 @@ class Sort extends Component {
 
   }
 
-  
-
   handleSubmit(event){
     this.props.sort(this.state.value);
     event.preventDefault();
@@ -141,6 +139,9 @@ class TodoList extends Component{
     let data = this.state.data;
     let indexOfElement = this.indexOfElement(todo);
     data.splice(indexOfElement, 1, {title: todo.title, completed: !todo.completed, priority: todo.priority, date: todo.date}); 
+    // data.splice(indexOfElement, 1); 
+    // data.push({title: todo.title, completed: !todo.completed, priority: todo.priority, date: todo.date});
+
     console.log(data);
     this.setState({data: data});
   }
@@ -198,28 +199,3 @@ class TodoList extends Component{
 
 
 export default TodoList;
-
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             Edit <code>src/App.js</code> and save to reload.
-//           </p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Learn React
-//           </a>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
-
